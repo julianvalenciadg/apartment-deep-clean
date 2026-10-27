@@ -24,7 +24,7 @@
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
 body{margin:0;background:var(--white);color:var(--bottle);font:400 18px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
-h1,h2,h3{font-family:var(--serif);font-weight:500;margin:0;letter-spacing:-.01em}
+h1,h2,h3{font-family:var(--serif);font-weight:500;font-variation-settings:"opsz" 14;margin:0;letter-spacing:-.01em}
 p{margin:0}
 a{color:inherit}
 :focus-visible{outline:2px solid var(--eucalyptus);outline-offset:3px}
@@ -105,6 +105,7 @@ section{padding:120px 0}
 .rate .n{font-size:20px;font-variant-numeric:tabular-nums}
 .rate .deal{color:var(--eucalyptus);font-weight:500}
 .quote .amt,.rate .apt,.aside .big,.step::before{font-weight:500}
+.mark,.quote .amt,.rate .apt,.aside .big,.step::before,.booking-sum strong,.dock span b{font-variation-settings:"opsz" 14}
 .aside{background:var(--white);border-radius:28px;padding:44px}
 .aside h3{font-size:32px;line-height:1.1;margin-bottom:16px}
 .aside p{color:var(--muted)}
