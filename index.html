@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apartment Deep Clean | Tallahassee</title>
+<meta name="description" content="Deep cleaning for student apartments in Tallahassee. I bring every supply, you pay when it's done. Book online in two minutes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0f2a2e; --muted:#4d6468; --bg:#f6faf8; --card:#ffffff; --line:#dce8e4;
+  --brand:#0e7c6b; --brand-ink:#ffffff; --soft:#e3f3ee; --accent:#f2b84b; --no:#b4483c;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 "DM Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.1;margin:0 0 .5em}
+a{color:var(--brand)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+
+/* hero */
+header{background:var(--ink);color:#fff;padding:22px 0 72px;position:relative;overflow:hidden}
+header::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;
+  background:radial-gradient(circle,#1d6f63 0%,transparent 70%);opacity:.7}
+nav{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1}
+.logo{font-family:Fraunces,serif;font-weight:800;font-size:20px;letter-spacing:.2px}
+.logo span{color:var(--accent)}
+.hero{position:relative;z-index:1;margin-top:56px;max-width:640px}
+.hero h1{font-size:clamp(38px,7vw,64px);font-weight:800}
+.hero p{font-size:19px;color:#cfe3df;margin:0 0 28px}
+.btn{display:inline-block;background:var(--accent);color:var(--ink);font-weight:700;text-decoration:none;
+  padding:14px 26px;border-radius:999px;border:0;cursor:pointer;font-size:17px}
+.btn.ghost{background:transparent;color:#fff;border:1.5px solid #ffffff55;margin-left:8px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.chip{background:#ffffff14;border:1px solid #ffffff22;padding:7px 14px;border-radius:999px;font-size:14px;color:#e6f2ef}
+
+section{padding:64px 0}
+section h2{font-size:clamp(28px,4.5vw,40px)}
+.lead{color:var(--muted);max-width:620px;margin:0 0 32px}
+
+/* included */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px}
+.card h3{font-size:21px}
+ul.check,ul.cross{list-style:none;padding:0;margin:0}
+ul.check li,ul.cross li{padding:6px 0 6px 30px;position:relative}
+ul.check li::before{content:"";position:absolute;left:0;top:11px;width:18px;height:18px;border-radius:50%;
+  background:var(--soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 10.5l3 3 7-7' fill='none' stroke='%230e7c6b' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/14px no-repeat}
+ul.cross li::before{content:"";position:absolute;left:0;top:11px;width:18px;height:18px;border-radius:50%;
+  background:#f8e6e3 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M6 6l8 8M14 6l-8 8' fill='none' stroke='%23b4483c' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E") center/12px no-repeat}
+.card.addon{border-color:var(--brand);box-shadow:0 0 0 3px var(--soft)}
+.tag{display:inline-block;background:var(--soft);color:var(--brand);font-weight:700;font-size:13px;padding:4px 10px;border-radius:999px;margin-bottom:10px}
+
+/* prices */
+.alt{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+table{width:100%;border-collapse:collapse;background:var(--card);border-radius:18px;overflow:hidden;border:1px solid var(--line)}
+th,td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--line)}
+th{background:var(--soft);font-size:14px;text-transform:uppercase;letter-spacing:.5px;color:var(--brand)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+tr:last-child td{border-bottom:0}
+.deal{color:var(--brand);font-weight:700}
+.note{font-size:15px;color:var(--muted);margin-top:14px}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;counter-reset:s}
+.step{counter-increment:s;padding:24px;border-radius:18px;background:var(--card);border:1px solid var(--line)}
+.step::before{content:counter(s);display:grid;place-items:center;width:38px;height:38px;border-radius:50%;
+  background:var(--ink);color:#fff;font-family:Fraunces,serif;font-weight:800;margin-bottom:12px}
+.step h3{font-size:19px}
+.step p{margin:0;color:var(--muted)}
+
+/* booking */
+.picker{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;align-items:end;
+  background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;margin-bottom:18px}
+label{display:block;font-weight:700;font-size:15px;margin-bottom:6px}
+select{width:100%;font:inherit;padding:12px 14px;border-radius:12px;border:1.5px solid var(--line);background:#fff;color:var(--ink)}
+.total{background:var(--ink);color:#fff;border-radius:14px;padding:12px 16px}
+.total small{display:block;color:#a9c9c3;font-size:13px}
+.total strong{font-family:Fraunces,serif;font-size:30px}
+.total em{font-style:normal;color:var(--accent);font-size:14px;display:block}
+#cal{min-height:640px;background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.fallback{font-size:15px;color:var(--muted);margin-top:10px}
+
+/* rules */
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.rules .card p{margin:0;color:var(--muted)}
+
+footer{padding:40px 0 60px;color:var(--muted);font-size:14px;text-align:center}
+
+@media (max-width:560px){
+  .btn.ghost{display:none}
+  section{padding:48px 0}
+  th,td{padding:12px 10px;font-size:15px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <div class="logo">Apartment <span>Deep Clean</span></div>
+      <a class="btn" href="#book" style="padding:10px 18px;font-size:15px">Book</a>
+    </nav>
+    <div class="hero">
+      <h1>Your apartment, actually clean.</h1>
+      <p>A full deep clean for student apartments in Tallahassee. I bring every supply and do all the work. You pay when it's done.</p>
+      <a class="btn" href="#book">See times and book</a>
+      <a class="btn ghost" href="#prices">Prices</a>
+      <div class="chips">
+        <span class="chip">From $150</span>
+        <span class="chip">Supplies included</span>
+        <span class="chip">Pay after, cash or Zelle</span>
+        <span class="chip">No deposit</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="included">
+  <div class="wrap">
+    <h2>What gets cleaned</h2>
+    <p class="lead">Every booking covers the kitchen, living room and all shared spaces. Bedrooms and bathrooms can be added for $35 each.</p>
+    <div class="grid">
+      <div class="card">
+        <span class="tag">Included in every clean</span>
+        <h3>Common areas</h3>
+        <ul class="check">
+          <li>Floors washed and mopped</li>
+          <li>Everything vacuumed, rugs included</li>
+          <li>Cabinets, inside the fridge, dishwasher</li>
+          <li>Sink and countertops</li>
+          <li>Tables, TV and decorations</li>
+          <li>Windows, curtains and doors</li>
+          <li>Living room spaces</li>
+          <li>Dust cleared from room corners</li>
+        </ul>
+      </div>
+      <div class="card addon">
+        <span class="tag">Add on, $35 per room</span>
+        <h3>Bedroom with its bathroom</h3>
+        <ul class="check">
+          <li>Bedroom floor vacuumed and mopped</li>
+          <li>Desk, dresser top, nightstand and shelves dusted</li>
+          <li>Door, handle, switches and baseboards wiped</li>
+          <li>Window and sill</li>
+          <li>Toilet inside and out, including the base</li>
+          <li>Sink, faucet, counter and mirror</li>
+          <li>Shower or tub walls, floor and glass</li>
+          <li>Bathroom floor mopped, trash taken out</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="tag" style="background:#f8e6e3;color:var(--no)">Not included</span>
+        <h3>What I don't do</h3>
+        <ul class="cross">
+          <li>Ceilings</li>
+          <li>Under the fridge</li>
+          <li>Laundry or making beds</li>
+          <li>Organizing belongings</li>
+          <li>Inside drawers and closets</li>
+          <li>Moving furniture</li>
+          <li>Mold, bodily fluids or pests</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="prices" class="alt">
+  <div class="wrap">
+    <h2>Prices</h2>
+    <p class="lead">Priced by how many people live in the apartment. Book every room and the whole apartment deal saves you money.</p>
+    <table>
+      <thead><tr><th>Apartment</th><th class="num">Common areas</th><th class="num">Each room</th><th class="num">Whole apartment deal</th></tr></thead>
+      <tbody>
+        <tr><td>1 person</td><td class="num">$150</td><td class="num">+$35</td><td class="num deal">$175</td></tr>
+        <tr><td>2 person</td><td class="num">$150</td><td class="num">+$35</td><td class="num deal">$210</td></tr>
+        <tr><td>3 person</td><td class="num">$175</td><td class="num">+$35</td><td class="num deal">$260</td></tr>
+        <tr><td>4 person</td><td class="num">$200</td><td class="num">+$35</td><td class="num deal">$320</td></tr>
+        <tr><td>5 person</td><td class="num">$250</td><td class="num">+$35</td><td class="num deal">$400</td></tr>
+      </tbody>
+    </table>
+    <p class="note">A room means one bedroom together with its bathroom. A shared bathroom that isn't attached to a bedroom counts as one room.</p>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <p class="lead">Two minutes to book. Nothing to buy, nothing to pay up front.</p>
+    <div class="steps">
+      <div class="step"><h3>Pick a time</h3><p>Choose how many people live there and how many rooms you want, then pick an open slot below.</p></div>
+      <div class="step"><h3>Tell me how to get in</h3><p>Complex, apartment number, gate code, and whether someone will be home.</p></div>
+      <div class="step"><h3>I clean</h3><p>I show up with every supply. Rooms first, common areas last, top to bottom. Takes a few hours depending on size.</p></div>
+      <div class="step"><h3>Pay when it's done</h3><p>Cash or Zelle before I leave. One person pays, roommates settle up between themselves.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="book" class="alt">
+  <div class="wrap">
+    <h2>Book your clean</h2>
+    <p class="lead">Open times are Sunday, Monday and Tuesday from 8 AM, and Thursday from 11 AM. Every clean finishes by 7 PM, so bigger jobs start earlier.</p>
+    <div class="picker">
+      <div>
+        <label for="people">People living in the apartment</label>
+        <select id="people">
+          <option value="1">1 person</option>
+          <option value="2">2 people</option>
+          <option value="3">3 people</option>
+          <option value="4" selected>4 people</option>
+          <option value="5">5 people</option>
+        </select>
+      </div>
+      <div>
+        <label for="rooms">Bedrooms with bathrooms to add</label>
+        <select id="rooms"></select>
+      </div>
+      <div class="total" aria-live="polite">
+        <small>Your price</small>
+        <strong id="price">$200</strong>
+        <em id="dealnote"></em>
+      </div>
+    </div>
+    <div id="cal"></div>
+    <p class="fallback">Calendar not loading? <a id="direct" href="https://cal.com/juliancleaning" target="_blank" rel="noopener">Open the booking page directly</a>.</p>
+  </div>
+</section>
+
+<section id="rules">
+  <div class="wrap">
+    <h2>The fine print</h2>
+    <div class="rules">
+      <div class="card"><h3>Payment</h3><p>Paid in full when I finish, before I leave. Cash or Zelle. No deposit to book.</p></div>
+      <div class="card"><h3>Cancelling</h3><p>Please cancel at least 24 hours ahead. A late cancel or no show needs a $25 Zelle deposit to book again.</p></div>
+      <div class="card"><h3>Bedrooms</h3><p>I only clean a bedroom its resident has agreed to. Locked or closed bedrooms are skipped and not charged.</p></div>
+      <div class="card"><h3>Your things</h3><p>I never touch or open personal items: phones, cash, jewelry, laptops, papers. I take before and after photos of every room.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Apartment Deep Clean, Tallahassee. Book online any time.</div>
+</footer>
+
+<script>
+const BASE={1:150,2:150,3:175,4:200,5:250};
+const DEAL={1:175,2:210,3:260,4:320,5:400};
+const SLUGS=["deep-clean","deep-clean-1-room","deep-clean-2-rooms","deep-clean-3-rooms","deep-clean-4-rooms","deep-clean-5-rooms"];
+const people=document.getElementById("people"), rooms=document.getElementById("rooms");
+
+function fillRooms(){
+  const p=+people.value, keep=rooms.value===""?0:+rooms.value;
+  const max=Math.min(5,p+1); // every bedroom plus one shared bathroom, up to 5
+  rooms.innerHTML="";
+  for(let r=0;r<=max;r++){
+    const o=document.createElement("option");
+    o.value=r; o.textContent=r===0?"None, common areas only":(r===p?`${r} (every bedroom)`:`${r} room${r>1?"s":""}`);
+    rooms.appendChild(o);
+  }
+  rooms.value=Math.min(keep,max);
+}
+function price(){
+  const p=+people.value, r=+rooms.value;
+  const full=BASE[p]+35*r;
+  if(r===p){ return {total:DEAL[p], note:`Whole apartment deal, you save $${full-DEAL[p]}`}; }
+  if(r>p){ return {total:DEAL[p]+35*(r-p), note:`Whole apartment deal plus a shared bathroom`}; }
+  return {total:full, note:r?`$${BASE[p]} plus ${r} × $35`:""};
+}
+
+let loaded=null;
+function loadCal(){
+  const p=+people.value, r=+rooms.value, slug=SLUGS[r];
+  const link=`juliancleaning/${slug}`;
+  document.getElementById("direct").href=`https://cal.com/${link}?residents=${p}`;
+  if(loaded===link+p) return;
+  loaded=link+p;
+  const el=document.getElementById("cal"); el.innerHTML="";
+  Cal.ns.clean("inline",{elementOrSelector:"#cal",calLink:link,config:{layout:"month_view",residents:String(p)}});
+}
+function update(){
+  const {total,note}=price();
+  document.getElementById("price").textContent="$"+total;
+  document.getElementById("dealnote").textContent=note;
+  loadCal();
+}
+people.addEventListener("change",()=>{fillRooms();update();});
+rooms.addEventListener("change",update);
+
+(function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+Cal("init","clean",{origin:"https://app.cal.com"});
+Cal.ns.clean("ui",{hideEventTypeDetails:false,layout:"month_view",cssVarsPerTheme:{light:{"cal-brand":"#0e7c6b"}}});
+
+fillRooms(); update();
+</script>
+</body>
+</html>
