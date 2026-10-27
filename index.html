@@ -279,7 +279,7 @@ function loadCal(){
   if(loaded===link+p) return;
   loaded=link+p;
   const el=document.getElementById("cal"); el.innerHTML="";
-  Cal.ns.clean("inline",{elementOrSelector:"#cal",calLink:link,config:{layout:"month_view",residents:String(p)}});
+  Cal.ns.clean("inline",{elementOrSelector:"#cal",calLink:link,config:{layout:"month_view",theme:"light",residents:String(p)}});
 }
 function update(){
   const {total,note}=price();
@@ -292,7 +292,7 @@ rooms.addEventListener("change",update);
 
 (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
 Cal("init","clean",{origin:"https://app.cal.com"});
-Cal.ns.clean("ui",{hideEventTypeDetails:false,layout:"month_view",cssVarsPerTheme:{light:{"cal-brand":"#0e7c6b"}}});
+Cal.ns.clean("ui",{theme:"light",hideEventTypeDetails:false,layout:"month_view",cssVarsPerTheme:{light:{"cal-brand":"#0e7c6b"}}});
 
 fillRooms(); update();
 </script>
