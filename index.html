@@ -4,130 +4,230 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Apartment Deep Clean | Tallahassee</title>
-<meta name="description" content="Deep cleaning for student apartments in Tallahassee. I bring every supply, you pay when it's done. Book online in two minutes.">
+<meta name="description" content="A full deep clean for student apartments in Tallahassee. Every supply brought, paid when it's done. Book online in two minutes.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#16343a; --muted:#56706b; --bg:#ffffff; --card:#ffffff; --line:#d3ede3;
-  --brand:#1f8a6e; --brand-ink:#ffffff; --soft:#eaf8f2; --mint:#e3f6ee; --accent:#1f8a6e; --no:#b4483c;
+  --white:#ffffff;
+  --mist:#eef8f3;      /* very light mint, the page's second surface */
+  --mint:#dcefe6;      /* hairlines and fills */
+  --sage:#9cc2b2;      /* quiet borders */
+  --eucalyptus:#2b6a55;/* action */
+  --bottle:#12352c;    /* text */
+  --muted:#5f7b71;
+  --serif:"Bodoni Moda",Didot,"Bodoni 72",Georgia,serif;
+  --sans:"Jost",system-ui,sans-serif;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 "DM Sans",system-ui,sans-serif}
-h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.1;margin:0 0 .5em}
-a{color:var(--brand)}
-.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--white);color:var(--bottle);font:300 18px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;letter-spacing:-.01em}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--eucalyptus);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+
+/* buttons */
+.book{display:inline-flex;align-items:center;justify-content:center;gap:14px;
+  background:var(--eucalyptus);color:#fff;text-decoration:none;border:0;cursor:pointer;
+  font:400 19px/1 var(--sans);letter-spacing:.02em;
+  height:68px;padding:0 44px;border-radius:999px;
+  box-shadow:0 14px 34px -14px rgba(43,106,85,.55);transition:background .2s, transform .2s}
+.book:hover{background:#215846;transform:translateY(-1px)}
+.book.full{width:100%}
+.book svg{width:20px;height:20px}
+
+/* top bar */
+.bar{display:flex;justify-content:space-between;align-items:center;height:92px}
+.mark{font-family:var(--serif);font-size:22px;text-decoration:none}
+.mark i{font-style:italic;color:var(--eucalyptus)}
+.bar nav{display:flex;gap:34px;align-items:center;font-size:16px}
+.bar nav a{text-decoration:none;color:var(--muted);white-space:nowrap}
+.bar nav a.book{color:#fff}
+.bar nav a:hover{color:var(--bottle)}
+.bar .book{height:48px;padding:0 26px;font-size:16px;box-shadow:none}
 
 /* hero */
-header{background:var(--mint);color:var(--ink);padding:22px 0 72px;position:relative;overflow:hidden}
-header::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;
-  background:radial-gradient(circle,#ffffff 0%,transparent 70%);opacity:.9}
-nav{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1}
-.logo{font-family:Fraunces,serif;font-weight:800;font-size:20px;letter-spacing:.2px}
-.logo span{color:var(--brand)}
-.hero{position:relative;z-index:1;margin-top:56px;max-width:640px}
-.hero h1{font-size:clamp(38px,7vw,64px);font-weight:800}
-.hero p{font-size:19px;color:var(--muted);margin:0 0 28px}
-.btn{display:inline-block;background:var(--brand);color:#fff;font-weight:700;text-decoration:none;
-  padding:14px 26px;border-radius:999px;border:0;cursor:pointer;font-size:17px}
-.btn.ghost{background:#fff;color:var(--ink);border:1.5px solid var(--line);margin-left:8px}
-.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
-.chip{background:#fff;border:1px solid var(--line);padding:7px 14px;border-radius:999px;font-size:14px;color:var(--ink)}
+.hero{background:linear-gradient(180deg,var(--white) 0%,var(--mist) 100%);padding:40px 0 110px}
+.hero .wrap:not(.bar){display:grid;grid-template-columns:1.15fr .85fr;gap:72px;align-items:center}
+.hero h1{font-size:clamp(52px,7.4vw,104px);line-height:.98}
+.hero h1 em{font-style:italic}
+.hero .intro{font-size:20px;color:var(--muted);max-width:30em;margin-top:30px}
+.facts{display:flex;flex-wrap:wrap;gap:12px 36px;margin-top:40px;padding-top:28px;border-top:1px solid var(--mint);font-size:16px}
+.facts span{display:flex;align-items:center;gap:10px}
+.facts svg{width:18px;height:18px;color:var(--eucalyptus);flex:none}
 
-section{padding:64px 0}
-section h2{font-size:clamp(28px,4.5vw,40px)}
-.lead{color:var(--muted);max-width:620px;margin:0 0 32px}
+/* reservation card */
+.reserve{background:var(--white);border:1px solid var(--mint);border-radius:28px;padding:38px 36px 32px;
+  box-shadow:0 40px 80px -40px rgba(18,53,44,.28)}
+.reserve h2{font-size:30px;margin-bottom:24px}
+.field{margin-bottom:18px}
+.field label{display:block;font-size:15px;color:var(--muted);margin-bottom:8px}
+.select{position:relative}
+.select select{appearance:none;-webkit-appearance:none;width:100%;font:400 18px var(--sans);color:var(--bottle);
+  background:var(--mist);border:1px solid transparent;border-radius:16px;padding:16px 48px 16px 18px;cursor:pointer}
+.select select:hover{border-color:var(--sage)}
+.select::after{content:"";position:absolute;right:20px;top:50%;width:9px;height:9px;margin-top:-7px;
+  border-right:1.5px solid var(--bottle);border-bottom:1.5px solid var(--bottle);transform:rotate(45deg);pointer-events:none}
+.quote{display:flex;justify-content:space-between;align-items:baseline;margin:26px 0 22px;padding-top:22px;border-top:1px solid var(--mint)}
+.quote .lbl{font-size:15px;color:var(--muted)}
+.quote .amt{font-family:var(--serif);font-size:58px;line-height:1}
+.save{display:block;min-height:22px;font-size:15px;color:var(--eucalyptus);text-align:right;margin:-14px 0 18px}
+.reassure{text-align:center;font-size:14px;color:var(--muted);margin-top:16px}
 
-/* included */
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px}
-.card h3{font-size:21px}
-ul.check,ul.cross{list-style:none;padding:0;margin:0}
-ul.check li,ul.cross li{padding:6px 0 6px 30px;position:relative}
-ul.check li::before{content:"";position:absolute;left:0;top:11px;width:18px;height:18px;border-radius:50%;
-  background:var(--soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 10.5l3 3 7-7' fill='none' stroke='%230e7c6b' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/14px no-repeat}
-ul.cross li::before{content:"";position:absolute;left:0;top:11px;width:18px;height:18px;border-radius:50%;
-  background:#f8e6e3 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M6 6l8 8M14 6l-8 8' fill='none' stroke='%23b4483c' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E") center/12px no-repeat}
-.card.addon{border-color:var(--brand);box-shadow:0 0 0 3px var(--soft)}
-.tag{display:inline-block;background:var(--soft);color:var(--brand);font-weight:700;font-size:13px;padding:4px 10px;border-radius:999px;margin-bottom:10px}
+/* sections */
+section{padding:120px 0}
+.head{max-width:640px;margin-bottom:64px}
+.head h2{font-size:clamp(40px,5vw,64px);line-height:1.02}
+.head p{color:var(--muted);font-size:19px;margin-top:20px}
+.mist{background:var(--mist)}
 
-/* prices */
-.alt{background:var(--mint);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-table{width:100%;border-collapse:collapse;background:var(--card);border-radius:18px;overflow:hidden;border:1px solid var(--line)}
-th,td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--line)}
-th{background:var(--soft);font-size:14px;text-transform:uppercase;letter-spacing:.5px;color:var(--brand)}
-td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
-tr:last-child td{border-bottom:0}
-.deal{color:var(--brand);font-weight:700}
-.note{font-size:15px;color:var(--muted);margin-top:14px}
+/* service menu */
+.menu{display:grid;grid-template-columns:repeat(3,1fr);gap:56px}
+.menu h3{font-size:28px;padding-bottom:16px;border-bottom:1px solid var(--bottle);display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.menu h3 small{font-family:var(--sans);font-size:15px;color:var(--eucalyptus);font-weight:400;white-space:nowrap}
+.menu ul{list-style:none;margin:0;padding:0}
+.menu li{padding:13px 0;border-bottom:1px solid var(--mint)}
+.menu .off h3{border-color:var(--sage);color:var(--muted)}
+.menu .off li{color:var(--muted)}
+.drawer-note{margin-top:22px;font-size:15px;color:var(--muted)}
 
-/* steps */
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;counter-reset:s}
-.step{counter-increment:s;padding:24px;border-radius:18px;background:var(--card);border:1px solid var(--line)}
-.step::before{content:counter(s);display:grid;place-items:center;width:38px;height:38px;border-radius:50%;
-  background:var(--mint);color:var(--brand);font-family:Fraunces,serif;font-weight:800;margin-bottom:12px}
-.step h3{font-size:19px}
-.step p{margin:0;color:var(--muted)}
+/* price list */
+.prices{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.rate{display:grid;grid-template-columns:1fr auto auto;gap:0 40px;align-items:baseline}
+.rate .h{font-size:14px;color:var(--muted);padding-bottom:14px;border-bottom:1px solid var(--bottle)}
+.rate .h.r,.rate .n{text-align:right}
+.rate div:not(.h){padding:20px 0;border-bottom:1px solid var(--sage)}
+.rate .apt{font-family:var(--serif);font-size:24px}
+.rate .n{font-size:20px;font-variant-numeric:tabular-nums}
+.rate .deal{color:var(--eucalyptus);font-weight:400}
+.aside{background:var(--white);border-radius:28px;padding:44px}
+.aside h3{font-size:32px;line-height:1.1;margin-bottom:16px}
+.aside p{color:var(--muted)}
+.aside p+p{margin-top:14px}
+.aside .big{font-family:var(--serif);font-size:72px;line-height:1;color:var(--eucalyptus);margin:22px 0 6px}
+
+/* process: a real sequence */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:44px;counter-reset:s}
+.step{counter-increment:s}
+.step::before{content:counter(s);display:block;font-family:var(--serif);font-style:italic;font-size:64px;line-height:1;color:var(--eucalyptus);margin-bottom:22px}
+.step h3{font-size:24px;margin-bottom:10px}
+.step p{color:var(--muted);font-size:17px}
 
 /* booking */
-.picker{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;align-items:end;
-  background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;margin-bottom:18px}
-label{display:block;font-weight:700;font-size:15px;margin-bottom:6px}
-select{width:100%;font:inherit;padding:12px 14px;border-radius:12px;border:1.5px solid var(--line);background:#fff;color:var(--ink)}
-.total{background:var(--mint);color:var(--ink);border:1.5px solid var(--line);border-radius:14px;padding:12px 16px}
-.total small{display:block;color:var(--muted);font-size:13px}
-.total strong{font-family:Fraunces,serif;font-size:30px}
-.total em{font-style:normal;color:var(--brand);font-weight:700;font-size:14px;display:block}
-#cal{min-height:640px;background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}
-.fallback{font-size:15px;color:var(--muted);margin-top:10px}
+#book .head{margin-bottom:40px}
+.booking-sum{display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px;margin-bottom:28px;font-size:17px}
+.booking-sum strong{font-family:var(--serif);font-weight:400;font-size:30px}
+.booking-sum button{background:none;border:0;padding:0;font:inherit;color:var(--eucalyptus);text-decoration:underline;text-underline-offset:4px;cursor:pointer}
+#cal{min-height:660px;background:var(--white);border:1px solid var(--mint);border-radius:28px;overflow:hidden}
+.fallback{font-size:15px;color:var(--muted);margin-top:16px}
 
-/* rules */
-.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
-.rules .card p{margin:0;color:var(--muted)}
+/* house rules */
+.rules{display:grid;grid-template-columns:repeat(2,1fr);gap:0 80px}
+.rule{padding:30px 0;border-top:1px solid var(--mint)}
+.rule h3{font-size:24px;margin-bottom:8px}
+.rule p{color:var(--muted)}
 
-footer{padding:40px 0 60px;color:var(--muted);font-size:14px;text-align:center}
+/* closing */
+.closing{text-align:center;padding:130px 0}
+.closing h2{font-size:clamp(44px,6vw,80px);line-height:1;margin-bottom:22px}
+.closing p{color:var(--muted);margin-bottom:40px}
+footer{border-top:1px solid var(--mint);padding:34px 0 120px;font-size:15px;color:var(--muted);text-align:center}
 
-@media (max-width:560px){
-  .btn.ghost{display:none}
-  section{padding:48px 0}
-  th,td{padding:12px 10px;font-size:15px}
+/* mobile booking bar */
+.dock{display:none}
+
+@media (max-width:980px){
+  .hero .wrap:not(.bar),.prices{grid-template-columns:1fr;gap:56px}
+  .menu{grid-template-columns:1fr;gap:56px}
+  .steps{grid-template-columns:1fr 1fr}
+  .bar nav a:not(.book){display:none}
+}
+@media (max-width:640px){
+  .wrap{padding:0 20px}
+  .bar{height:76px}
+  .hero{padding:16px 0 80px}
+  .reserve{padding:28px 22px 24px;border-radius:24px}
+  section{padding:84px 0}
+  .head{margin-bottom:44px}
+  .steps,.rules{grid-template-columns:1fr}
+  .rate{gap:0 18px}
+  .rate .apt{font-size:20px}
+  .aside{padding:32px 26px}
+  .dock{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:20;align-items:center;justify-content:space-between;gap:12px;
+    background:var(--white);border:1px solid var(--mint);border-radius:999px;padding:8px 8px 8px 22px;box-shadow:0 18px 40px -16px rgba(18,53,44,.4)}
+  .dock span{font-size:15px;color:var(--muted)}
+  .dock span b{font-family:var(--serif);font-weight:400;font-size:22px;color:var(--bottle)}
+  .dock .book{height:54px;padding:0 26px;font-size:17px;box-shadow:none}
 }
 </style>
 </head>
 <body>
 
-<header>
-  <div class="wrap">
+<div class="hero">
+  <div class="wrap bar">
+    <a class="mark" href="#">Apartment <i>Deep Clean</i></a>
     <nav>
-      <div class="logo">Apartment <span>Deep Clean</span></div>
-      <a class="btn" href="#book" style="padding:10px 18px;font-size:15px">Book</a>
+      <a href="#included">What's cleaned</a>
+      <a href="#prices">Prices</a>
+      <a href="#rules">House rules</a>
+      <a class="book" href="#book">Book a cleaning</a>
     </nav>
-    <div class="hero">
-      <h1>Your apartment, actually clean.</h1>
-      <p>A full deep clean for student apartments in Tallahassee. I bring every supply and do all the work. You pay when it's done.</p>
-      <a class="btn" href="#book">See times and book</a>
-      <a class="btn ghost" href="#prices">Prices</a>
-      <div class="chips">
-        <span class="chip">From $150</span>
-        <span class="chip">Supplies included</span>
-        <span class="chip">Pay after, cash or Zelle</span>
-        <span class="chip">No deposit</span>
+  </div>
+
+  <div class="wrap">
+    <div>
+      <h1>A deep clean, done properly.</h1>
+      <p class="intro">For student apartments in Tallahassee. I bring every supply, clean every surface on the list, and you pay once it's finished.</p>
+      <div class="facts">
+        <span><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 10.5l4 4 8-9"/></svg>All supplies included</span>
+        <span><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 10.5l4 4 8-9"/></svg>No deposit</span>
+        <span><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 10.5l4 4 8-9"/></svg>Pay after, cash or Zelle</span>
       </div>
     </div>
+
+    <form class="reserve" id="reserve" onsubmit="event.preventDefault();goBook();">
+      <h2>Price your clean</h2>
+      <div class="field">
+        <label for="people">People living in the apartment</label>
+        <div class="select"><select id="people">
+          <option value="1">1 person</option>
+          <option value="2">2 people</option>
+          <option value="3">3 people</option>
+          <option value="4" selected>4 people</option>
+          <option value="5">5 people</option>
+        </select></div>
+      </div>
+      <div class="field">
+        <label for="rooms">Bedrooms with bathrooms to add</label>
+        <div class="select"><select id="rooms"></select></div>
+      </div>
+      <div class="quote" aria-live="polite">
+        <span class="lbl">Your price</span>
+        <span class="amt" id="price">$200</span>
+      </div>
+      <span class="save" id="dealnote"></span>
+      <button class="book full" type="submit">Book a cleaning
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4.5" width="14" height="12" rx="2"/><path d="M3 8.5h14M7 2.5v4M13 2.5v4"/></svg>
+      </button>
+      <p class="reassure">See open times next. Nothing is charged online.</p>
+    </form>
   </div>
-</header>
+</div>
 
 <section id="included">
   <div class="wrap">
-    <h2>What gets cleaned</h2>
-    <p class="lead">Every booking covers the kitchen, living room and all shared spaces. Bedrooms and bathrooms can be added for $35 each.</p>
-    <div class="grid">
-      <div class="card">
-        <span class="tag">Included in every clean</span>
-        <h3>Common areas</h3>
-        <ul class="check">
+    <div class="head">
+      <h2>What's cleaned</h2>
+      <p>Every booking covers the kitchen, living room and all shared spaces. Add any bedroom with its bathroom.</p>
+    </div>
+    <div class="menu">
+      <div>
+        <h3>Common areas <small>Every clean</small></h3>
+        <ul>
           <li>Floors washed and mopped</li>
           <li>Everything vacuumed, rugs included</li>
           <li>Cabinets, drawers and closets, inside and out</li>
@@ -139,14 +239,13 @@ footer{padding:40px 0 60px;color:var(--muted);font-size:14px;text-align:center}
           <li>Dust cleared from room corners</li>
         </ul>
       </div>
-      <div class="card addon">
-        <span class="tag">Add on, $35 per room</span>
-        <h3>Bedroom with its bathroom</h3>
-        <ul class="check">
-          <li>Bedroom floor vacuumed and mopped</li>
+      <div>
+        <h3>Bedroom and bath <small>$35 each</small></h3>
+        <ul>
+          <li>Floor vacuumed and mopped</li>
           <li>Desk, dresser top, nightstand and shelves dusted</li>
           <li>Closet floor, rod and empty shelves</li>
-          <li>Door, handle, switches and baseboards wiped</li>
+          <li>Door, handle, switches and baseboards</li>
           <li>Window and sill</li>
           <li>Toilet inside and out, including the base</li>
           <li>Sink, faucet, counter and mirror</li>
@@ -154,10 +253,9 @@ footer{padding:40px 0 60px;color:var(--muted);font-size:14px;text-align:center}
           <li>Bathroom floor mopped, trash taken out</li>
         </ul>
       </div>
-      <div class="card">
-        <span class="tag" style="background:#f8e6e3;color:var(--no)">Not included</span>
-        <h3>What I don't do</h3>
-        <ul class="cross">
+      <div class="off">
+        <h3>Not included</h3>
+        <ul>
           <li>Ceilings</li>
           <li>Under the fridge</li>
           <li>Laundry, folding clothes or making beds</li>
@@ -165,66 +263,59 @@ footer{padding:40px 0 60px;color:var(--muted);font-size:14px;text-align:center}
           <li>Moving furniture</li>
           <li>Mold, bodily fluids or pests</li>
         </ul>
+        <p class="drawer-note">Drawers and closets with clothes or personal items stay closed and get wiped outside. Empty anything you want cleaned inside.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="prices" class="alt">
+<section id="prices" class="mist">
   <div class="wrap">
-    <h2>Prices</h2>
-    <p class="lead">Priced by how many people live in the apartment. Book every room and the whole apartment deal saves you money.</p>
-    <table>
-      <thead><tr><th>Apartment</th><th class="num">Common areas</th><th class="num">Each room</th><th class="num">Whole apartment deal</th></tr></thead>
-      <tbody>
-        <tr><td>1 person</td><td class="num">$150</td><td class="num">+$35</td><td class="num deal">$175</td></tr>
-        <tr><td>2 person</td><td class="num">$150</td><td class="num">+$35</td><td class="num deal">$210</td></tr>
-        <tr><td>3 person</td><td class="num">$175</td><td class="num">+$35</td><td class="num deal">$260</td></tr>
-        <tr><td>4 person</td><td class="num">$200</td><td class="num">+$35</td><td class="num deal">$320</td></tr>
-        <tr><td>5 person</td><td class="num">$250</td><td class="num">+$35</td><td class="num deal">$400</td></tr>
-      </tbody>
-    </table>
-    <p class="note">A room means one bedroom together with its bathroom. A shared bathroom that isn't attached to a bedroom counts as one room.</p>
+    <div class="head">
+      <h2>Prices</h2>
+      <p>Set by how many people live in the apartment. A room means one bedroom with its bathroom; a shared bathroom on its own counts as one room.</p>
+    </div>
+    <div class="prices">
+      <div class="rate">
+        <div class="h">Apartment</div><div class="h r">Common areas</div><div class="h r">Every room</div>
+        <div class="apt">1 person</div><div class="n">$150</div><div class="n deal">$175</div>
+        <div class="apt">2 person</div><div class="n">$150</div><div class="n deal">$210</div>
+        <div class="apt">3 person</div><div class="n">$175</div><div class="n deal">$260</div>
+        <div class="apt">4 person</div><div class="n">$200</div><div class="n deal">$320</div>
+        <div class="apt">5 person</div><div class="n">$250</div><div class="n deal">$400</div>
+      </div>
+      <div class="aside">
+        <h3>The whole apartment deal</h3>
+        <p>Book every bedroom and the price drops below adding rooms one by one.</p>
+        <p class="big">$320</p>
+        <p>for a 4 person apartment, every room included. Save up to $25.</p>
+      </div>
+    </div>
   </div>
 </section>
 
 <section id="how">
   <div class="wrap">
-    <h2>How it works</h2>
-    <p class="lead">Two minutes to book. Nothing to buy, nothing to pay up front.</p>
+    <div class="head"><h2>How it works</h2></div>
     <div class="steps">
-      <div class="step"><h3>Pick a time</h3><p>Choose how many people live there and how many rooms you want, then pick an open slot below.</p></div>
+      <div class="step"><h3>Choose a time</h3><p>Pick your apartment size and rooms, then an open slot.</p></div>
       <div class="step"><h3>Tell me how to get in</h3><p>Complex, apartment number, gate code, and whether someone will be home.</p></div>
-      <div class="step"><h3>I clean</h3><p>I show up with every supply. Rooms first, common areas last, top to bottom. Takes a few hours depending on size.</p></div>
-      <div class="step"><h3>Pay when it's done</h3><p>Cash or Zelle before I leave. One person pays, roommates settle up between themselves.</p></div>
+      <div class="step"><h3>I clean</h3><p>Rooms first, common areas last, top to bottom, with my own supplies.</p></div>
+      <div class="step"><h3>Pay when it's done</h3><p>Cash or Zelle before I leave. One person pays; roommates settle up.</p></div>
     </div>
   </div>
 </section>
 
-<section id="book" class="alt">
+<section id="book" class="mist">
   <div class="wrap">
-    <h2>Book your clean</h2>
-    <p class="lead">Open times are Sunday, Monday and Tuesday from 8 AM, and Thursday from 11 AM. Every clean finishes by 7 PM, so bigger jobs start earlier.</p>
-    <div class="picker">
-      <div>
-        <label for="people">People living in the apartment</label>
-        <select id="people">
-          <option value="1">1 person</option>
-          <option value="2">2 people</option>
-          <option value="3">3 people</option>
-          <option value="4" selected>4 people</option>
-          <option value="5">5 people</option>
-        </select>
-      </div>
-      <div>
-        <label for="rooms">Bedrooms with bathrooms to add</label>
-        <select id="rooms"></select>
-      </div>
-      <div class="total" aria-live="polite">
-        <small>Your price</small>
-        <strong id="price">$200</strong>
-        <em id="dealnote"></em>
-      </div>
+    <div class="head">
+      <h2>Book a cleaning</h2>
+      <p>Open Sunday, Monday and Tuesday from 8 AM, and Thursday from 11 AM. Every clean finishes by 7 PM, so larger jobs start earlier.</p>
+    </div>
+    <div class="booking-sum">
+      <span id="sumtext">4 people, common areas only</span>
+      <strong id="sumprice">$200</strong>
+      <button type="button" onclick="document.getElementById('reserve').scrollIntoView({behavior:'smooth',block:'center'})">Change</button>
     </div>
     <div id="cal"></div>
     <p class="fallback">Calendar not loading? <a id="direct" href="https://cal.com/juliancleaning" target="_blank" rel="noopener">Open the booking page directly</a>.</p>
@@ -233,68 +324,79 @@ footer{padding:40px 0 60px;color:var(--muted);font-size:14px;text-align:center}
 
 <section id="rules">
   <div class="wrap">
-    <h2>The fine print</h2>
+    <div class="head"><h2>House rules</h2></div>
     <div class="rules">
-      <div class="card"><h3>Payment</h3><p>Paid in full when I finish, before I leave. Cash or Zelle. No deposit to book.</p></div>
-      <div class="card"><h3>Cancelling</h3><p>Please cancel at least 24 hours ahead. A late cancel or no show needs a $25 Zelle deposit to book again.</p></div>
-      <div class="card"><h3>Bedrooms</h3><p>I only clean a bedroom its resident has agreed to. Locked or closed bedrooms are skipped and not charged.</p></div>
-      <div class="card"><h3>Your things</h3><p>I never touch personal belongings: watches, jewelry, phones, cash, laptops, papers, clothes. I clean around them. I take before and after photos of every room.</p></div>
-      <div class="card"><h3>Drawers and closets</h3><p>I clean inside anything that's empty. Drawers and shelves with clothes or personal items stay closed, and I only wipe the outside. Want one cleaned inside? Empty it before I arrive. Kitchen drawers are always fine.</p></div>
+      <div class="rule"><h3>Payment</h3><p>Paid in full when I finish, before I leave. Cash or Zelle. No deposit to book.</p></div>
+      <div class="rule"><h3>Cancelling</h3><p>Cancel at least 24 hours ahead. A late cancel or no show needs a $25 Zelle deposit to book again.</p></div>
+      <div class="rule"><h3>Bedrooms</h3><p>I only clean a bedroom its resident has agreed to. Locked or closed bedrooms are skipped and not charged.</p></div>
+      <div class="rule"><h3>Your things</h3><p>I never touch watches, jewelry, phones, cash, laptops, papers or clothes. I clean around them and photograph every room before and after.</p></div>
+      <div class="rule"><h3>Drawers and closets</h3><p>Cleaned inside when empty. Ones holding clothes or personal items stay closed and get wiped outside. Kitchen drawers are always fine.</p></div>
+      <div class="rule"><h3>What I skip</h3><p>Anything unsafe to clean: mold, bodily fluids or pests.</p></div>
     </div>
   </div>
 </section>
 
-<footer>
-  <div class="wrap">Apartment Deep Clean, Tallahassee. Book online any time.</div>
-</footer>
+<div class="closing mist">
+  <div class="wrap">
+    <h2>Come home to clean.</h2>
+    <p>Two minutes to book. Paid only when it's done.</p>
+    <a class="book" href="#book">Book a cleaning</a>
+  </div>
+</div>
+
+<footer><div class="wrap">Apartment Deep Clean, Tallahassee</div></footer>
+
+<div class="dock" aria-label="Book a cleaning">
+  <span>From <b id="dockprice">$200</b></span>
+  <a class="book" href="#book">Book a cleaning</a>
+</div>
 
 <script>
 const BASE={1:150,2:150,3:175,4:200,5:250};
 const DEAL={1:175,2:210,3:260,4:320,5:400};
 const SLUGS=["deep-clean","deep-clean-1-room","deep-clean-2-rooms","deep-clean-3-rooms","deep-clean-4-rooms","deep-clean-5-rooms"];
-const people=document.getElementById("people"), rooms=document.getElementById("rooms");
+const $=id=>document.getElementById(id);
+const people=$("people"), rooms=$("rooms");
 
 function fillRooms(){
   const p=+people.value, keep=rooms.value===""?0:+rooms.value;
-  const max=Math.min(5,p+1); // every bedroom plus one shared bathroom, up to 5
+  const max=Math.min(5,p+1);
   rooms.innerHTML="";
   for(let r=0;r<=max;r++){
     const o=document.createElement("option");
-    o.value=r; o.textContent=r===0?"None, common areas only":(r===p?`${r} (every bedroom)`:`${r} room${r>1?"s":""}`);
+    o.value=r; o.textContent=r===0?"None, common areas only":(r===p?`${r}, every bedroom`:`${r} room${r>1?"s":""}`);
     rooms.appendChild(o);
   }
   rooms.value=Math.min(keep,max);
 }
 function price(){
-  const p=+people.value, r=+rooms.value;
-  const full=BASE[p]+35*r;
-  if(r===p){ return {total:DEAL[p], note:`Whole apartment deal, you save $${full-DEAL[p]}`}; }
-  if(r>p){ return {total:DEAL[p]+35*(r-p), note:`Whole apartment deal plus a shared bathroom`}; }
-  return {total:full, note:r?`$${BASE[p]} plus ${r} × $35`:""};
+  const p=+people.value, r=+rooms.value, full=BASE[p]+35*r;
+  if(r===p) return {total:DEAL[p],note:`Whole apartment deal, you save $${full-DEAL[p]}`};
+  if(r>p) return {total:DEAL[p]+35*(r-p),note:"Whole apartment deal plus a shared bathroom"};
+  return {total:full,note:r?`$${BASE[p]} plus ${r} × $35`:""};
 }
-
 let loaded=null;
 function loadCal(){
-  const p=+people.value, r=+rooms.value, slug=SLUGS[r];
-  const link=`juliancleaning/${slug}`;
-  document.getElementById("direct").href=`https://cal.com/${link}?residents=${p}`;
+  const p=+people.value, r=+rooms.value, link=`juliancleaning/${SLUGS[r]}`;
+  $("direct").href=`https://cal.com/${link}?residents=${p}`;
   if(loaded===link+p) return;
-  loaded=link+p;
-  const el=document.getElementById("cal"); el.innerHTML="";
+  loaded=link+p; $("cal").innerHTML="";
   Cal.ns.clean("inline",{elementOrSelector:"#cal",calLink:link,config:{layout:"month_view",theme:"light",residents:String(p)}});
 }
 function update(){
-  const {total,note}=price();
-  document.getElementById("price").textContent="$"+total;
-  document.getElementById("dealnote").textContent=note;
+  const {total,note}=price(), p=+people.value, r=+rooms.value;
+  $("price").textContent=$("sumprice").textContent=$("dockprice").textContent="$"+total;
+  $("dealnote").textContent=note;
+  $("sumtext").textContent=`${p} ${p>1?"people":"person"}, `+(r===0?"common areas only":r===p?"every bedroom":`${r} room${r>1?"s":""}`);
   loadCal();
 }
+function goBook(){ $("book").scrollIntoView({behavior:"smooth"}); }
 people.addEventListener("change",()=>{fillRooms();update();});
 rooms.addEventListener("change",update);
 
 (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
 Cal("init","clean",{origin:"https://app.cal.com"});
-Cal.ns.clean("ui",{theme:"light",hideEventTypeDetails:false,layout:"month_view",cssVarsPerTheme:{light:{"cal-brand":"#1f8a6e"}}});
+Cal.ns.clean("ui",{theme:"light",hideEventTypeDetails:false,layout:"month_view",cssVarsPerTheme:{light:{"cal-brand":"#2b6a55"}}});
 
 fillRooms(); update();
 </script>
