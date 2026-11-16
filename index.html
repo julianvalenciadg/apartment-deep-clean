@@ -126,6 +126,7 @@ section{padding:120px 0}
 .booking-sum{display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px;margin-bottom:28px;font-size:17px}
 .booking-sum strong{font-family:var(--serif);font-weight:500;font-size:30px}
 .booking-sum button{background:none;border:0;padding:0;font:inherit;color:var(--eucalyptus);text-decoration:underline;text-underline-offset:4px;cursor:pointer}
+.req{font-size:13px;color:var(--muted);margin:0 0 10px 4px}
 #cal{min-height:660px;background:var(--white);border:1px solid var(--mint);border-radius:28px;overflow:hidden}
 .fallback{font-size:15px;color:var(--muted);margin-top:16px}
 
@@ -323,6 +324,7 @@ footer{border-top:1px solid var(--mint);padding:34px 0 120px;font-size:15px;colo
       <strong id="sumprice">$200</strong>
       <button type="button" onclick="document.getElementById('reserve').scrollIntoView({behavior:'smooth',block:'center'})">Change</button>
     </div>
+    <p class="req">* Required</p>
     <div id="cal"></div>
     <p class="fallback">Questions before you book? Email <a href="mailto:hello@tallysqueakyclean.com">hello@tallysqueakyclean.com</a>.<br>Calendar not loading? <a id="direct" href="https://cal.com/juliancleaning" target="_blank" rel="noopener">Open the booking page directly</a>.</p>
   </div>
